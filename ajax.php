@@ -1,13 +1,18 @@
 <?php
-include_once "../../mainfile.php";
+session_start();
+require_once dirname(dirname(__DIR__)) . '/mainfile.php';
 
-$sql           = "select counter from " . $xoopsDB->prefix("tad_faq_content") . " where fqsn='{$_POST['sn']}'";
-$result        = $xoopsDB->query($sql);
+$sn = (int) mb_substr($_POST['sn'], 3);
+
+$sql = 'select counter from ' . $xoopsDB->prefix('tad_faq_content') . " where fqsn='{$sn}'";
+$result = $xoopsDB->query($sql);
 list($counter) = $xoopsDB->fetchRow($result);
 
-$counter++;
+if (!in_array($sn, $_SESSION['ok_sn'])) {
+    $counter++;
 
-$sql = "update " . $xoopsDB->prefix("tad_faq_content") . " set counter=$counter where fqsn='{$_POST['sn']}'";
-$xoopsDB->queryF($sql);
-
+    $sql = 'update ' . $xoopsDB->prefix('tad_faq_content') . " set counter=$counter where fqsn='{$sn}'";
+    $xoopsDB->queryF($sql);
+    $_SESSION['ok_sn'][$sn] = $sn;
+}
 echo $counter;

@@ -1,27 +1,17 @@
 <?php
-function xoops_module_install_tad_faq(&$module)
-{
 
-    mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_faq");
-    mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_faq/file");
-    mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_faq/image");
-    mk_dir(XOOPS_ROOT_PATH . "/uploads/tad_faq/image/.thumbs");
+use XoopsModules\Tadtools\Utility;
 
-    return true;
+if (!class_exists('XoopsModules\Tadtools\Utility')) {
+    require XOOPS_ROOT_PATH . '/modules/tadtools/preloads/autoloader.php';
 }
 
-//建立目錄
-function mk_dir($dir = "")
+function xoops_module_install_tad_faq(&$module)
 {
-    //若無目錄名稱秀出警告訊息
-    if (empty($dir)) {
-        return;
-    }
+    Utility::mk_dir(XOOPS_ROOT_PATH . '/uploads/tad_faq');
+    Utility::mk_dir(XOOPS_ROOT_PATH . '/uploads/tad_faq/file');
+    Utility::mk_dir(XOOPS_ROOT_PATH . '/uploads/tad_faq/image');
+    Utility::mk_dir(XOOPS_ROOT_PATH . '/uploads/tad_faq/image/.thumbs');
 
-    //若目錄不存在的話建立目錄
-    if (!is_dir($dir)) {
-        umask(000);
-        //若建立失敗秀出警告訊息
-        mkdir($dir, 0777);
-    }
+    return true;
 }

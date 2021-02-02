@@ -1,5 +1,5 @@
 <?php
-include_once '../../tadtools/language/' . $xoopsConfig['language'] . '/admin_common.php';
+xoops_loadLanguage('admin_common', 'tadtools');
 define('_TAD_NEED_TADTOOLS', '需要 tadtools 模組，可至<a href="http://campus-xoops.tn.edu.tw/modules/tad_modules/index.php?module_sn=1" target="_blank">XOOPS輕鬆架</a>下載。');
 define('_MA_TADFAQ_CATE_INPUT_FORM', 'FAQ分類設定');
 define('_MA_TADFAQ_TITLE', '分類標題');

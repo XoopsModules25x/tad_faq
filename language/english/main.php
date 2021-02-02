@@ -1,4 +1,5 @@
 <?php
+xoops_loadLanguage('main', 'tadtools');
 define('_MD_TADFAQ_FAQ', 'FAQ');
 define('_MD_TADFAQ_FAQ_NUM', '（Total: %s）');
 

@@ -1,4 +1,5 @@
 <?php
+xoops_loadLanguage('main', 'tadtools');
 define('_MD_TADFAQ_FAQ', '常見問題');
 define('_MD_TADFAQ_FAQ_NUM', '（共有 %s 則）');
 

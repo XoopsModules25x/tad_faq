@@ -1,7 +1,2 @@
-<{if $block.content}>
-  <{foreach from=$block.content item=faq}>
-    <div style="clear: both; padding-bottom: 8px;">
-      <img src="<{$xoops_url}>/modules/tad_faq/images/comment_edit.png" align="absmiddle" hspace=2 alt="<{$faq.title}>" style="margin: 4px;"><a href="<{$xoops_url}>/modules/tad_faq/index.php?fcsn=<{$faq.fcsn}>" style="line-height: 150%; text-decoration: none;"><{$faq.title}> <{$faq.num}></a>
-    </div>
-  <{/foreach}>
-<{/if}>
+<{assign var=this_file value=$smarty.template|basename|replace:'db:':''}>
+<{includeq file="$xoops_rootpath/modules/tad_faq/templates/blocks/b4.tpl"}>

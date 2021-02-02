@@ -1,5 +1,5 @@
 <?php
-include_once XOOPS_ROOT_PATH . '/modules/tadtools/language/' . $xoopsConfig['language'] . '/modinfo_common.php';
+xoops_loadLanguage('modinfo_common', 'tadtools');
 
 define('_MI_TADFAQ_NAME', '常見問答');
 define('_MI_TADFAQ_AUTHOR', 'Tad(tad0616@gmail.com)');
@@ -17,7 +17,7 @@ define('_MI_TADFAQ_MODULE_TITLE_DESC', '會顯示在模組首頁上方的文字'
 define('_MI_TADFAQ_MODULE_TITLE_VAL', '常見問題');
 
 define('_MI_TADFAQ_DIRNAME', basename(dirname(dirname(__DIR__))));
-define('_MI_TADFAQ_HELP_HEADER', __DIR__ . '/help/helpheader.html');
+define('_MI_TADFAQ_HELP_HEADER', __DIR__ . '/help/helpheader.tpl');
 define('_MI_TADFAQ_BACK_2_ADMIN', '管理');
 
 //help

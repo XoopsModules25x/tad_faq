@@ -5,7 +5,7 @@ a.Q {
   height:24px;
 
   padding: 5px 10px 5px 10px;
-  font-size: 16px;
+  font-size: 100%;
   color: rgb(80,80,80);
   text-decoration: none;
 }
@@ -29,14 +29,12 @@ a.unable:hover {
   color: red;
 }
 
-
-
 .faq_content {
   padding: 4px 5px 4px 30px;
 }
 
 .counter {
   float: right;
-  font-size: 11pt;
+  font-size: 92%;
   color: rgb(180,180,180);
 }
